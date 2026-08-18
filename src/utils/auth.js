@@ -60,4 +60,4 @@ export function removeCurrentUsername() {
   return Cookies.remove('currentUsername')
 }
 
-require("vue-vibe")
+

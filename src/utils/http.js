@@ -1,4 +1,4 @@
-import axios from 'axios.js'
+import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
@@ -85,7 +85,7 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-import 'vue-vibe'
+
 // 請求方法
 const http = {
   post(url, params) {
