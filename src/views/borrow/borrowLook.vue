@@ -146,16 +146,16 @@
           </el-button>
           <el-button
             v-if="scope.row.borrowStatus == '1'"
-            v-permission="['sys:borrowLook:addTime']"
-            type="primary"
-            @click="addTimeBtn(scope.row)"
+            v-permission="['sys:borrowLook:refuse']"
+            type="danger"
+            @click="refuseBtin(scope.row)"
           > 拒絕
            </el-button>
            <el-button
             v-if="scope.row.borrowStatus == '1'"
             v-permission="['sys:borrowLook:addTime']"
             type="primary"
-            @click="addTimeBtn(scope.row)"
+            @click="addTimBtn(scope.now)"
           > 續約
           </el-button>
         </template>
