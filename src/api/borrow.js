@@ -22,6 +22,10 @@ export const getLookBorrowListApi = async(parm) => {
 export const applyBookApi = async(parm) => {
   return await http.post('/api/borrow/applyBook', parm)
 }
+// 拒絕借閱申請
+export const refuseBookApi = async(parm) => {
+  return await http.post('/api/borrow/refuseBook', parm)
+}
 // 還書續期
 export const addTimeApi = async(parm) => {
   return await http.post('/api/borrow/addTime', parm)
