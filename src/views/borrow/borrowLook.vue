@@ -147,9 +147,14 @@
           <el-button
             v-if="scope.row.borrowStatus == '1'"
             v-permission="['sys:borrowLook:addTime']"
-              
             type="primary"
-             
+            @click="addTimeBtn(scope.row)"
+          > 拒絕
+           </el-button>
+           <el-button
+            v-if="scope.row.borrowStatus == '1'"
+            v-permission="['sys:borrowLook:addTime']"
+            type="primary"
             @click="addTimeBtn(scope.row)"
           > 續約
           </el-button>
@@ -201,7 +206,7 @@
 <script>
 import SysDialog from '@/components/dialog/SysDialog.vue'
 import { getUserId } from '@/utils/auth'
-import { getLookBorrowListApi, applyBookApi, addTimeApi } from '@/api/borrow'
+import { getLookBorrowListApi, applyBookApi, addTimeApi, refuseBookApi } from '@/api/borrow'
 
 export default {
   components: {
@@ -323,6 +328,17 @@ export default {
       const confirm = await this.$myconfirm('確定審核嗎?')
       if (confirm) {
         const res = await applyBookApi({ borrowId: row.borrowId })
+        if (res && res.code == 200) {
+          this.$message.success(res.msg)
+          this.getLookBorrowList()
+        }
+      }
+    },
+    async refuseBtn(row) {
+      console.log(row)
+      const confirm = await this.$myconfirm('確定拒絕此借閱申請嗎?')
+      if (confirm) {
+        const res = await refuseBookApi({ borrowId: row.borrowId })
         if (res && res.code == 200) {
           this.$message.success(res.msg)
           this.getLookBorrowList()
