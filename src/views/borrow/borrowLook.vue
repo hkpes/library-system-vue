@@ -135,31 +135,36 @@
       </el-table-column>
       <el-table-column  label="操作" fixed="right"  width="260">
         <template slot-scope="scope">
-          <el-button
-            v-if="scope.row.applyStatus == '0'"
-            v-permission="['sys:borrowLook:apply']"
-              
-            type="primary"
-             
-            @click="applyBtn(scope.row)"
-          > 同意借閱
-          </el-button>
-          <el-button
-            v-if="scope.row.borrowStatus == '1'"
-            v-permission="['sys:borrowLook:refuse']"
-            type="danger"
-            @click="refuseBtn(scope.row)"
-          > 拒絕
-           </el-button>
-           <el-button
-            v-if="scope.row.borrowStatus == '1'"
-            v-permission="['sys:borrowLook:addTime']"
-            type="primary"
-            @click="addTimeBtn(scope.row)"
-          > 續約
-          </el-button>
-        </template>
-      </el-table-column>
+         <el-button
+          v-if="scope.row.applyStatus == '0'"
+          v-permission="['sys:borrowLook:apply']"
+          type="primary"
+          @click="applyBtn(scope.row)"
+        > 同意借閱
+        </el-button>
+        <el-button
+          v-if="scope.row.applyStatus == '0'"
+          v-permission="['sys:borrowLook:apply']"
+          type="danger"
+          @click="refuseBtn(scope.row)"
+        > 拒絕
+        </el-button>
+        <el-button
+          v-if="scope.row.borrowStatus == '1'"
+          v-permission="['sys:borrowLook:apply']"
+          type="danger"
+          @click="refuseBtn(scope.row)"
+        > 拒絕
+        </el-button>
+        <el-button
+          v-if="scope.row.borrowStatus == '1'"
+          v-permission="['sys:borrowLook:addTime']"
+          type="primary"
+          @click="addTimeBtn(scope.row)"
+        > 續約
+        </el-button>
+      </template>
+    </el-table-column>
     </el-table>
     <!-- 分頁 -->
     <el-pagination
