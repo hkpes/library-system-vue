@@ -133,7 +133,7 @@
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column  label="操作" fixed="right"  width="200">
+      <el-table-column  label="操作" fixed="right"  width="260">
         <template slot-scope="scope">
           <el-button
             v-if="scope.row.applyStatus == '0'"
@@ -148,14 +148,14 @@
             v-if="scope.row.borrowStatus == '1'"
             v-permission="['sys:borrowLook:refuse']"
             type="danger"
-            @click="refuseBtin(scope.row)"
+            @click="refuseBtn(scope.row)"
           > 拒絕
            </el-button>
            <el-button
             v-if="scope.row.borrowStatus == '1'"
             v-permission="['sys:borrowLook:addTime']"
             type="primary"
-            @click="addTimBtn(scope.now)"
+            @click="addTimeBtn(scope.row)"
           > 續約
           </el-button>
         </template>
