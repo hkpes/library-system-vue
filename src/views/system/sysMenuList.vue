@@ -374,7 +374,7 @@ export default {
       this.selectNode.id = node.menuId
       this.selectNode.title = node.title
     },
-    // 上級選單确定事件
+    // 上級選單確定事件
     parentConfirm() {
       this.addModel.parentId = this.selectNode.id
       this.addModel.parentName = this.selectNode.title

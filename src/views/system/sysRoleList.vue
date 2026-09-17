@@ -339,8 +339,8 @@ export default {
     },
     // 刪除按鈕
     async deleteBtn(row) {
-      // 确定
-      const confirm = await this.$myconfirm('确定刪除該數據嗎?')
+      // 確定
+      const confirm = await this.$myconfirm('確定刪除該數據嗎?')
       if (confirm) {
         const res = await deleteRoleApi({ roleId: row.roleId })
         if (res && res.code == 200) {

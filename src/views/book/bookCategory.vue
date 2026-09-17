@@ -202,7 +202,7 @@ export default {
     // 刪除按鈕
     async deleteBtn(row) {
       // 信息確認
-      const confrim = await this.$myconfirm('确定删除该数据吗?')
+      const confrim = await this.$myconfirm('確定刪除該數據嗎?')
       if (confrim) {
         const res = await deleteApi({ categoryId: row.categoryId })
         if (res && res.code == 200) {

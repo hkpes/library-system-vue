@@ -172,7 +172,7 @@ import {
 // 引入彈框組件
 import SysDialog from '@/components/dialog/SysDialog.vue'
 export default {
-  // 註冊組件
+  // 註冊組
   components: {
     SysDialog
   },
@@ -300,7 +300,7 @@ export default {
         this.total = res.data.total
       }
     },
-    // 彈框确定
+    // 彈框確定
     onConfirm() {
       // 表單驗證
       this.$refs.addRef.validate(async(valid) => {
@@ -338,7 +338,7 @@ export default {
     },
     // 刪除按钮
     async deleteBtn(row) {
-      const confirm = await this.$myconfirm('确定刪除該數據嗎?')
+      const confirm = await this.$myconfirm('確定刪除該數據嗎?')
       if (confirm) {
         const res = await deleteUserApi({ userId: row.userId })
         if (res && res.code == 200) {

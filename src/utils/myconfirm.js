@@ -3,7 +3,7 @@ import { MessageBox } from 'element-ui'
 export default function myconfirm(text) {
   return new Promise((resolve, reject) => {
     MessageBox.confirm(text, '系統提示', {
-      confirmButtonText: ' 确定',
+      confirmButtonText: ' 確定',
       cancelButtonText: ' 取消',
       type: 'warning'
     }).then(() => {
